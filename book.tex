@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%%%%%% book.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample root file for the chapters of your "monograph"
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% RECOMMENDED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[graybox,envcountchap,sectrefs]{svmono}
+
+% choose options for [] as required from the list
+% in the Reference Guide
+
+\usepackage{mathptmx}
+\usepackage{helvet}
+\usepackage{courier}
+%
+\usepackage{type1cm}         
+
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+
+% see the list of further useful packages
+% in the Reference Guide
+
+\makeindex             % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% User Defined 
+\usepackage{amsmath}
+\newcommand{\code}[1]{\small{\texttt{#1}}}
+\usepackage{listings} 
+\lstset{% 
+	basicstyle=\ttfamily, 
+	breaklines=true,
+	columns=fullflexible,
+%	escapeinside = ||,
+	breakindent=0pt} 
+\lstnewenvironment{Code}{\leavevmode}{}
+
+\setcounter{secnumdepth}{2}
+
+% to make example sec:zigzag-conversion has equally spaced column
+\usepackage{array}
+	
+\begin{document}
+
+\author{Haoda Fu\\
+Eli Lilly and Company}
+\title{Algorithms: Problems and Solutions}
+\subtitle{Implemented in \texttt{C++11}}
+\maketitle
+
+\frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{dedic}
+%\include{foreword}
+\include{preface}
+%\include{acknow}
+
+
+\tableofcontents
+
+%\include{acronym}
+
+
+\mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{part}
+
+%\include{chapter}
+%\include{./Chapters/chapter2}
+\include{./Chapters/ChapterLinearList}
+\include{./Chapters/ChapterString}
+\include{./Chapters/ChapterTree}
+\include{./Chapters/ChapterStackAndQueue}
+\include{./Chapters/ChapterImplementation}
+\include{appendix}
+
+\backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{glossary}
+%\include{solutions}
+\printindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
+
+
+
+
